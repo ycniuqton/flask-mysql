@@ -28,4 +28,4 @@ pip run.py
 ```
 Accutally, if you forgot, i remind you that. 
 You need to setup `Gmail API` first to using sending email feature.
-After setup `Gmail API`, you will got a service-key.json. Replace it with mine here. 
+After setup `Gmail API`, you will get a service-key.json. Replace it with mine here. 
