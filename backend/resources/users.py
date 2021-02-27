@@ -8,8 +8,8 @@ from resources.errors import SchemaValidationError, MovieAlreadyExistsError, Int
 import json
 
 
-
 class UserApi(Resource):
+    # update user info
     @jwt_required()
     def put(self, id):
         try:
@@ -17,6 +17,7 @@ class UserApi(Resource):
             body = request.get_json()
             if 'password_new' in body and 'password_old' in body:
                 user = User.objects.get(id=id)
+                # handle password change action
                 if user.check_password(body['password_old']):
                     user.modify(password=body['password_new'])
                     user.hash_password()
@@ -28,7 +29,7 @@ class UserApi(Resource):
             return {'success': True, 'data': {}}
         except Exception:
             return {'success': False, 'data': {}}
-
+    # get user detail
     @jwt_required()
     def get(self, id):
         try:

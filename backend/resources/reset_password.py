@@ -19,15 +19,16 @@ class ForgotPassword(Resource):
             email = body.get('email')
             if not email:
                 raise SchemaValidationError
-
+            # verify user.
             user = User.objects.get(email=email)
             if not user:
                 raise EmailDoesnotExistsError
-
-            expires = datetime.timedelta(hours=24)
+            # set expired time for forgot password token,
+            expires = datetime.timedelta(hours=1)
             reset_token = create_access_token(str(user.id), expires_delta=expires)
 
-            send_email('[Hejjijein] Reset Your Password',
+            # sending email
+            send_email('[Zulemaz] Reset Your Password',
                               sender='vienbui39dj3e33@gmail.com',
                               recipients=[user.email],
                               text_body=render_template('email/reset_password.txt',
@@ -48,14 +49,14 @@ class ResetPassword(Resource):
             body = request.get_json()
             user_id = get_jwt_identity()
             password = body.get('password')
-
+            # verify user.
             user = User.objects.get(id=user_id)
 
             user.modify(password=password)
             user.hash_password()
             user.save()
-            send_email('[Hejjijein] Password reset successful',
-                       sender='support@Hejjijein.com',
+            send_email('[Zulemaz] Password reset successful',
+                       sender='support@zulemaz.com',
                        recipients=[user.email],
                        text_body='Password reset was successful',
                        html_body='<p>Password reset was successful</p>')

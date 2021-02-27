@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "logical-light-305802",
+  "private_key_id": "94550ec458d083455d9412abf8c9aa1a2075749a",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCza4W24UUKMPmW\nigWQPUFA9UF1bTzR7tZUWgy2alaaKqzfBz0p21X9r9R9NUf07188m59JXv8aXzlW\neBavyLcUp67gpeJPJUDTlc9FlU1Aadx2utlqlAj+dLTpc4NI2NVZqAsig9KvsRAU\nwNl16B7eCWa9KltTeXigrlRAdmAe8Bam96Q7EoaAZ44fgRbGOViGlzpucJ5QuBBh\nvlyAVgF8JiDl3SFYsvpM+xhqDhfEYFnLVAksfD7aSdPwEMRQGU6C85NVCS6NyNWd\nONmNRGjA841dnfjGeBOsPrzhMy1KfVNcK2L3+8htLZjcSGQduCW1cyTUocUTFQ8D\nXmS5AH2hAgMBAAECggEAFdX4KBGyfVMIjTGvC6bo0icHGGt7A3G10/5BndHDSG/5\nKguPfhCbnoxPqA1b/ItFY/Lsp9lP4r3EFKn42NvsrC7cMar+p/M4uId6+lT5WeWI\nV0rWOwpZLd62RdMxHySEkqzI7iJs+cTq2BvAW4EsgIlUX6FQDBC0hZmx10aQ3DLX\nSXqM2HD2hSBCXJGVz5/0j/8OPTHNUjkTayPJM7mPCCfx5FiP0KfNqO4KilHR/0vt\nIl5r0COC5iKRJoM1qXCjOZCZOaYS/NEc6hwvT/yQsTE+QZv7Cq4tP8l50gFknx3f\n2zrUaD7jNBw4XJU6Loy4ST3DHNGPhmvFYCaQIeUWoQKBgQD5iFtVA71kh7TugjGB\nyudj5cdcESIN0cLqU54YrbuRrLujbmZ39K6q7tggVWVabXoERSRYAnVQrH21AABn\nN76j8JLy2w0HG+XNf+2e8ylv4z80jmrL9Q1dytUa3RImQO1CuGneg83si3J3kuFD\nNL3RINFAAFhtU0GWLM8epJk+bwKBgQC4EfhJeJ9fZqJ2ohAVU/pDM5GHskvqfj0e\nuvU+s/WAcfwDXO/7ASwp2xCggqxz3gcO95CNhPII1IXJ6YE1Zzy7MPBUJMJ9HQVi\nIyoPVKclnbTgzluYcqEl5dGSwUP+CLZbUws43VlmL0tKmdluVV7D09xMOY+O9J1t\nq88zUh4M7wKBgQCNJPH0Xo8sZA6VspLqRakounpPu2k1w+aqwO12LB8iwT/Jq9LO\nG1sJWNxrPaJ8ydvwumNaXNma7laUoRGZUNDGzndwYzM1SDRuTuRLumM/5JyFz+Dc\nyRnsaaSs80sm1CbgTIulz4wVNrNiq3Q7nYOY3SU/PHLINAWvOl1ViekchQKBgQCl\n/D5jMoy04L58MCREt1ekJeqD7TocGP5QqdLhWjJ2Q1M4TSRyulny3IKf23Zbfcnr\nqz8E/u+rGsoSi6hiWdggDT+LASMI45SpLICPFo0rlI05c5yRWj0LCbT0m6cOexjG\nPZqPCrvFM7y3Zwj1P7KW8INlkTptdRRJg3bzFofWrQKBgHv7HoIqsHhnRADuynf5\n01MCxG8OGyFHZkI27jwqZ3lpMez3Foi5bNsVc5Rk+gRE26B7LRxruR63nSB/oa6A\n/NDw5evchbphMu7zy8lKwJcNTm3Qx/WCP3Jjk/J/cfT9sZ+UTZZZL8NWAE+3sQBn\nnoOIFLlUXyxehijfOSKrvcDs\n-----END PRIVATE KEY-----\n",
+  "client_email": "zelumaz-auto-mail@logical-light-305802.iam.gserviceaccount.com",
+  "client_id": "106329141300335680692",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/zelumaz-auto-mail%40logical-light-305802.iam.gserviceaccount.com"
+}

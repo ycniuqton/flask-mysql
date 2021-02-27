@@ -73,6 +73,53 @@
 
 
 
+<style>
+#snackbar {
+  visibility: hidden;
+  min-width: 250px;
+  margin-left: -125px;
+  background-color: #4fb648;
+  color: white;
+  text-align: center;
+  border-radius: 2px;
+  padding: 16px;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  bottom: 30px;
+  font-size: 17px;
+}
+
+#snackbar.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+  from {bottom: 0; opacity: 0;} 
+  to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+  from {bottom: 30px; opacity: 1;} 
+  to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
+</style>
+<div data-portal-id="popover-Polarisportal3">
+    <div id="snackbar">Reset password request has been sent to your email.</div>
+</div>
+<div data-portal-id="modal-Polarisportal1"><div></div></div><div data-portal-id="Polarisportal2"><div class="Polaris-Frame-ToastManager" aria-live="assertive"></div></div><div data-portal-id="modal-Polarisportal4"><div></div></div><div data-portal-id="modal-Polarisportal5"><div></div></div><div data-portal-id="modal-Polarisportal6"><div></div></div><div data-portal-id="modal-Polarisportal7"><div></div></div><div data-portal-id="popover-Polarisportal8"></div><div data-portal-id="popover-Polarisportal9"></div></div></div></div>
 
 
 

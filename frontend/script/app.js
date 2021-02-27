@@ -8,12 +8,50 @@ domain = window.location.hostname
 
 $(".Polaris-Frame__Content").append(`
 
-<div id="my_footer" class="Footer"><div class="Polaris-Stack"><div class="Polaris-Stack__Item"><a href="/#" target="_blank" data-polaris-unstyled="true" class="Polaris-Link Polaris-Link--removeUnderline"><p class="Polaris-Caption"><span class="Polaris-TextStyle--variationSubdued">Home</span></p></a></div><div class="Polaris-Stack__Item"><a href="/home/about" target="_blank" data-polaris-unstyled="true" class="Polaris-Link Polaris-Link--removeUnderline"><p class="Polaris-Caption"><span class="Polaris-TextStyle--variationSubdued">About Us</span></p></a></div><div class="Polaris-Stack__Item"><a href="/home/term/" target="_blank" data-polaris-unstyled="true" class="Polaris-Link Polaris-Link--removeUnderline"><p class="Polaris-Caption"><span class="Polaris-TextStyle--variationSubdued">Terms</span></p></a></div><div class="Polaris-Stack__Item"><a href="/home/policy/" target="_blank" data-polaris-unstyled="true" class="Polaris-Link Polaris-Link--removeUnderline"><p class="Polaris-Caption"><span class="Polaris-TextStyle--variationSubdued">Privacy</span></p></a></div><div class="Polaris-Stack__Item"><p class="Polaris-Caption"><span class="Polaris-TextStyle--variationSubdued">© Hejjijein 2021</span></p></div></div></div>
+<div id="my_footer" class="Footer"><div class="Polaris-Stack"><div class="Polaris-Stack__Item"><a href="/#" target="_blank" data-polaris-unstyled="true" class="Polaris-Link Polaris-Link--removeUnderline"><p class="Polaris-Caption"><span class="Polaris-TextStyle--variationSubdued">Home</span></p></a></div><div class="Polaris-Stack__Item"><a href="/home/about" target="_blank" data-polaris-unstyled="true" class="Polaris-Link Polaris-Link--removeUnderline"><p class="Polaris-Caption"><span class="Polaris-TextStyle--variationSubdued">About Us</span></p></a></div><div class="Polaris-Stack__Item"><a href="/home/term/" target="_blank" data-polaris-unstyled="true" class="Polaris-Link Polaris-Link--removeUnderline"><p class="Polaris-Caption"><span class="Polaris-TextStyle--variationSubdued">Terms</span></p></a></div><div class="Polaris-Stack__Item"><a href="/home/policy/" target="_blank" data-polaris-unstyled="true" class="Polaris-Link Polaris-Link--removeUnderline"><p class="Polaris-Caption"><span class="Polaris-TextStyle--variationSubdued">Privacy</span></p></a></div><div class="Polaris-Stack__Item"><p class="Polaris-Caption"><span class="Polaris-TextStyle--variationSubdued">© Zulemaz 2021</span></p></div></div></div>
 
 `)
 
+// Render header for app
 $(".Polaris-Frame__TopBar").html(`
-<div class="Polaris-TopBar"><button type="button" class="Polaris-TopBar__NavigationIcon" aria-label="Toggle menu"><span class="Polaris-Icon"><svg viewBox="0 0 20 20" class="Polaris-Icon__Svg" focusable="false" aria-hidden="true"><path d="M19 11H1a1 1 0 0 1 0-2h18a1 1 0 1 1 0 2zm0-7H1a1 1 0 0 1 0-2h18a1 1 0 1 1 0 2zm0 14H1a1 1 0 0 1 0-2h18a1 1 0 0 1 0 2z"></path></svg></span></button><div class="Polaris-TopBar__LogoContainer Polaris-TopBar__LogoDisplayControl"><a data-polaris-unstyled="true" class="Polaris-TopBar__LogoLink" style="width: 95px;" href="/app/dashboard/"><img src="/logo.png" alt="" class="Polaris-TopBar__Logo" style="width: 95px;"></a></div><div class="Polaris-TopBar__Contents"><div class="Polaris-TopBar__SearchField"><div><div class="Polaris-TopBar-SearchField"><span class="Polaris-VisuallyHidden"><label for="PolarisSearchField1">Search</label></span><input id="PolarisSearchField1" class="Polaris-TopBar-SearchField__Input" placeholder="Search" type="search" autocapitalize="off" autocomplete="off" autocorrect="off" value=""><span class="Polaris-TopBar-SearchField__Icon"><span class="Polaris-Icon"><svg viewBox="0 0 20 20" class="Polaris-Icon__Svg" focusable="false" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm9.707 4.293l-4.82-4.82A5.968 5.968 0 0 0 14 8 6 6 0 0 0 2 8a6 6 0 0 0 6 6 5.968 5.968 0 0 0 3.473-1.113l4.82 4.82a.997.997 0 0 0 1.414 0 .999.999 0 0 0 0-1.414z"></path></svg></span></span><div class="Polaris-TopBar-SearchField__Backdrop"></div></div></div></div><div class="Polaris-TopBar__SecondaryMenu"></div><div><div class="Polaris-TopBar-Menu__ActivatorWrapper" id="profile-zone"><button type="button" class="Polaris-TopBar-Menu__Activator" tabindex="0" aria-controls="Polarispopover1" aria-owns="Polarispopover1" aria-expanded="false"><span class="Polaris-TopBar-UserMenu__Details"><p class="Polaris-TopBar-UserMenu__Name" id="fullname"></p><p class="Polaris-TopBar-UserMenu__Detail" id="business-name"></p></span></button></div></div></div></div>
+<div class="Polaris-TopBar">
+   <button type="button" class="Polaris-TopBar__NavigationIcon" aria-label="Toggle menu">
+      <span class="Polaris-Icon">
+         <svg viewBox="0 0 20 20" class="Polaris-Icon__Svg" focusable="false" aria-hidden="true">
+            <path d="M19 11H1a1 1 0 0 1 0-2h18a1 1 0 1 1 0 2zm0-7H1a1 1 0 0 1 0-2h18a1 1 0 1 1 0 2zm0 14H1a1 1 0 0 1 0-2h18a1 1 0 0 1 0 2z"></path>
+         </svg>
+      </span>
+   </button>
+   <div class="Polaris-TopBar__LogoContainer Polaris-TopBar__LogoDisplayControl"><a data-polaris-unstyled="true" class="" style="width: 95px;" href="/app/dashboard/"><img src="/logo.png" alt="" class="" style="width: 95px;"></a></div>
+   <div class="Polaris-TopBar__Contents">
+      <div class="Polaris-TopBar__SearchField">
+         <div>
+            <div class="Polaris-TopBar-SearchField">
+               <span class="Polaris-VisuallyHidden"><label for="PolarisSearchField1">Search</label></span><input id="PolarisSearchField1" class="Polaris-TopBar-SearchField__Input" placeholder="Search" type="search" autocapitalize="off" autocomplete="off" autocorrect="off" value="">
+               <span class="Polaris-TopBar-SearchField__Icon">
+                  <span class="Polaris-Icon">
+                     <svg viewBox="0 0 20 20" class="Polaris-Icon__Svg" focusable="false" aria-hidden="true">
+                        <path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm9.707 4.293l-4.82-4.82A5.968 5.968 0 0 0 14 8 6 6 0 0 0 2 8a6 6 0 0 0 6 6 5.968 5.968 0 0 0 3.473-1.113l4.82 4.82a.997.997 0 0 0 1.414 0 .999.999 0 0 0 0-1.414z"></path>
+                     </svg>
+                  </span>
+               </span>
+               <div class="Polaris-TopBar-SearchField__Backdrop"></div>
+            </div>
+         </div>
+      </div>
+      <div class="Polaris-TopBar__SecondaryMenu"></div>
+      <div>
+         <div class="Polaris-TopBar-Menu__ActivatorWrapper" id="profile-zone">
+            <button type="button" class="Polaris-TopBar-Menu__Activator" tabindex="0" aria-controls="Polarispopover1" aria-owns="Polarispopover1" aria-expanded="false">
+               <span class="Polaris-TopBar-UserMenu__Details">
+                  <p class="Polaris-TopBar-UserMenu__Name" id="fullname"></p>
+                  <p class="Polaris-TopBar-UserMenu__Detail" id="business-name"></p>
+               </span>
+            </button>
+         </div>
+      </div>
+   </div>
+</div>
 `)
 
 $("button[aria-label='Connect Shopify shop']").click(function(){
@@ -62,18 +100,45 @@ switch (page) {
 
 
 function handle_signup(){
-    // bind event
-
+    // bind signup onclick event
     $("#sign-up-btn").click(function(event) {
-        console.log("clicked");
-        if ($("#id_password1").val() != $("#id_password2").val()){
-            $("#message-box").text("password did not match.")
+        event.preventDefault();
+        // validate required fields
+        require_parram  = ['id_business','id_first_name', 'id_last_name', 'id_username', 'id_country', 'id_password1', 
+         'id_password2']
+        field_name = {'id_username':'Email', 'id_password1':'Password', 'id_business':'Business Name', 
+        'id_password2':'Password', 'id_first_name':'First Name', 'id_last_name':'Last Name', 'id_country':'Country'}
+
+        for ( i in require_parram){
+            console.log("#"+require_parram[i], $("#"+i).val())
+            if ($("#"+require_parram[i]).val().trim() == ""){
+                $("#message-box").text(field_name[require_parram[i]]+" is required.")   
+                return 1
+            }
         }
+        // validate password
+        if ($("#id_password1").val() != $("#id_password2").val()){
+            $("#message-box").text("Passwords did not match.")
+            return 1
+        }
+        if ($("#id_password1").val().length < 8){
+                $("#message-box").text("Invalid password, minimum length: 8.")
+                return 1
+        }
+
+
+        // validate email
+        if (!validateEmail($("#id_username").val())) {
+            $("#message-box").text("Invalid email address.")
+            return 1
+        }
+
+        // must accept term
         if (!$("#id_terms").is(":checked")){
             $("#message-box").text("You must accept our Terms and Conditions.")   
         }
         else{
-
+            // submit
             $.ajax({
                 method: "POST",
                 dataType: "json",
@@ -94,10 +159,19 @@ function handle_signup(){
                 error: function(response) {
                     console.log(response)
                     window.location.href = "/account/signup"
+
                 }, success(response) {
                     console.log("123123")
                     if(!response['success']){
-                        window.location.href = "/account/signup"                        
+                        console.log(response)
+                        if ('message' in response && response['message'] == 'dub_email'){
+                            $("#message-box").text("This email already exists.")
+                            
+                        }
+                        else{
+                            window.location.href = "/account/signup"
+
+                        }                   
                     }
                     else{
                         window.location.href = "/account/login"                           
@@ -198,7 +272,11 @@ function handle_forgot_password(){
                         alert("Something 's wrong");              
                     }
                     else{
-                        window.location.href = '/account/login/'                   
+                        $("#snackbar").addClass('show')
+                            setTimeout(function(){
+                                window.location.href = '/account/login/'     
+                            },1500)
+                                         
                     }
                 }
             });
@@ -375,9 +453,16 @@ function handle_contact(){
                 ),
         url: "https://" + domain + ":3500/api/contact",
         error: function(response) {
-            window.location.reload();
+            $("#snackbar").addClass('show')
+            setTimeout(function(){
+                window.location.reload();
+            },500)
         }, success(response) {
-            window.location.reload();
+            $("#snackbar").addClass('show')
+            setTimeout(function(){
+                window.location.reload();
+            },500)
+            
         }
     })
 
@@ -1082,7 +1167,7 @@ function show_create_order(){
             <div class="Polaris-Modal-Dialog__Modal">
                <div class="Polaris-Modal-Header">
                   <div id="Polarismodal-header6" class="Polaris-Modal-Header__Title">
-                     <h2 class="Polaris-DisplayText Polaris-DisplayText--sizeSmall">Upload your design</h2>
+                     <h2 class="Polaris-DisplayText Polaris-DisplayText--sizeSmall">Upload your CSV file</h2>
                   </div>
                   <button class="Polaris-Modal-CloseButton" aria-label="Close">
                      <span class="Polaris-Icon Polaris-Icon--colorBase Polaris-Icon--isColored">
@@ -1132,6 +1217,10 @@ function show_create_order(){
   <button class="btn">Upload a file</button>
   <input id="upload-btn" type="file" name="myfile">
 </div>
+
+<div style="color:red;
+    padding-top: 5px;
+" id="message-box"></div>
                               </div>
                               
                               
@@ -1156,6 +1245,12 @@ function show_create_order(){
     });
 
     $("#upload-btn").change(function(){
+        if ($('#upload-btn')[0].files[0].size/1024/1024 >25){
+            $("#message-box").html("File is too large to upload(>25MB).")
+            return 1
+        }
+
+        $("#message-box").html("")
         $("button.btn").css('color','#4fb648');
 
         var formData = new FormData();
@@ -1175,7 +1270,13 @@ function show_create_order(){
                processData: false,  // tell jQuery not to process the data
                success : function(data) {
                    setTimeout(function(){ 
+                       $("#snackbar").addClass("show")
                        $("div[data-portal-id='modal-Polarisportal5']").html(""); 
+                        setTimeout(function(){ 
+                               $("#snackbar").removeClass("show")
+                               
+
+                           }, 2000);    
 
                    }, 500);
                }
@@ -1184,4 +1285,10 @@ function show_create_order(){
     
 
 
+}
+
+
+function validateEmail(email) {
+  const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return re.test(email);
 }

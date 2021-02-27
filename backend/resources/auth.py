@@ -17,6 +17,8 @@ class SignupApi(Resource):
             id = user.id
             return {'success': True, 'data': {'id': str(id)}}
         except Exception as e:
+            if str(e).find('index: email_1 dup key') >0:
+                return {'success': False, 'message':'dub_email', 'data':{}}
             return {'success': False, 'data': {}}
 
 class LoginApi(Resource):
