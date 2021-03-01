@@ -8,6 +8,11 @@ There is nothing to talk about this.
 - Mongodb
 - Python==3.6.9
 
+## System architecture
+- Frontend: js, html, css 
+- Backend: flask - restapi 
+- Mail service: Gmail API 
+
 
 ## Frontend
 
@@ -64,7 +69,7 @@ service nginx restart
 
 ### Mongodb 
 
-Install required packet
+Install 
 ```
 apt update
 apt install -y mongodb
@@ -92,7 +97,7 @@ ADMIN_EMAIL = 'support@zulemaz.com'
 
 Replace `pem.crt` and `pem.key` with your ssl keypair
 
-Install required packet
+Start service
 ```
 cd ./backend
 pip run.py
