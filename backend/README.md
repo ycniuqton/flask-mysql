@@ -1,6 +1,24 @@
 # Order Shipping 's backend
 This is backend, nothing much to talk about this. 
 
+## Architecture
+This is project 's  folder tree
+- run.py: run flask app 
+- app.py: define the flask app 
+- database
+    - db.py: init database
+    - models.py: define models
+- resources
+    - auth.py: handle login, signup method
+    - contact.py: handle request from contact page
+    - errors.py: define common error messages
+    - order.py: handle creating order request
+    - reset_password.py: handle forgot password and reset password phase
+    - routes.py: define all routes in this app
+    - users.py: api handler for USER, handle get user 's info request. 
+- services
+    - mail_service.py: connect to Gmail API and send mail.
+
 ## Deploy 
 Install required packet
 ```
