@@ -1,0 +1,287 @@
+{
+	"info": {
+		"_postman_id": "ef4032ab-fd52-4fb8-8eb9-6c50fe724028",
+		"name": "trash_thinhnvb",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "account",
+			"item": [
+				{
+					"name": "signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"ngohongqui@gmail.com\",\r\n    \"password\":\"123456\",\r\n    \"business_name\" :\"Business Name\",\r\n    \"first_name\": \"Ngo\",\r\n    \"last_name\": \"Qui\",\r\n    \"country\" : \"VietNam\",\r\n    \"fb_profile\": \"https://fb.com/quinh\",\r\n    \"refer_code\":\"code-12b39a\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{domain}}:3500/api/auth/signup",
+							"protocol": "http",
+							"host": [
+								"{{domain}}"
+							],
+							"port": "3500",
+							"path": [
+								"api",
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"quinh@gmail.com\",\r\n    \"password\":\"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{domain}}:3500/api/auth/login",
+							"protocol": "http",
+							"host": [
+								"{{domain}}"
+							],
+							"port": "3500",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "forgot",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"ngohongqui@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{domain}}:3500/api/auth/forgot",
+							"protocol": "http",
+							"host": [
+								"{{domain}}"
+							],
+							"port": "3500",
+							"path": [
+								"api",
+								"auth",
+								"forgot"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get one",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTYxMzkwODQyMywianRpIjoiNzg0MjVlMjktMzdjMi00ZmQyLWEzOWItMzkzMWE4ZDU5NGIxIiwibmJmIjoxNjEzOTA4NDIzLCJ0eXBlIjoiYWNjZXNzIiwic3ViIjoiNjAzMjQ2NmUzMTk1OTM1NGZjZWI3ZmJhIiwiZXhwIjoxNjE0NTEzMjIzfQ.hK7OQlSMosTgRDDss18YTozxVOhKcCogNqjd6luolsw",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://{{domain}}:3500/api/user/60324b0087b5bd43e09b2f56",
+							"protocol": "http",
+							"host": [
+								"{{domain}}"
+							],
+							"port": "3500",
+							"path": [
+								"api",
+								"user",
+								"60324b0087b5bd43e09b2f56"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTYxMzkwODk0NCwianRpIjoiOTc1YmVkZmUtOWZjYy00NjAxLWE3N2EtMmI1OWRkNzRiYmE2IiwibmJmIjoxNjEzOTA4OTQ0LCJ0eXBlIjoiYWNjZXNzIiwic3ViIjoiNjAzMjRiY2IzZjY5MDJkZWNmODkxZjllIiwiZXhwIjoxNjE0NTEzNzQ0fQ.2eKzdg40zBeVpluj-MiTcazU5vAiwTmLWYftBID6yQc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"business_name\" :\"Business ee\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{domain}}:3500/api/user/603288e03f6902decf891f9f",
+							"protocol": "http",
+							"host": [
+								"{{domain}}"
+							],
+							"port": "3500",
+							"path": [
+								"api",
+								"user",
+								"603288e03f6902decf891f9f"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "order",
+			"item": [
+				{
+					"name": "Get all",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTYxMzg4OTQ3NywianRpIjoiOTM1MWQ4MDEtNTcyMC00NTM0LThjNDctNjgyNjRlNDc0NmEzIiwibmJmIjoxNjEzODg5NDc3LCJ0eXBlIjoiYWNjZXNzIiwic3ViIjoiNjAzMWZjMTdjZjk0YWQ2ODAzNmU5MTUwIiwiZXhwIjoxNjE0NDk0Mjc3fQ.epTmnNY0QIsaOLDbqzPuCncgqvz2UXglyznuvfQ35vs",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://{{domain}}:3500/api/orders",
+							"protocol": "http",
+							"host": [
+								"{{domain}}"
+							],
+							"port": "3500",
+							"path": [
+								"api",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get one",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{domain}}:3500/api/orders/60324230327453f078ec9a31",
+							"protocol": "http",
+							"host": [
+								"{{domain}}"
+							],
+							"port": "3500",
+							"path": [
+								"api",
+								"orders",
+								"60324230327453f078ec9a31"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create ",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTYxMzg4OTQ3NywianRpIjoiOTM1MWQ4MDEtNTcyMC00NTM0LThjNDctNjgyNjRlNDc0NmEzIiwibmJmIjoxNjEzODg5NDc3LCJ0eXBlIjoiYWNjZXNzIiwic3ViIjoiNjAzMWZjMTdjZjk0YWQ2ODAzNmU5MTUwIiwiZXhwIjoxNjE0NDk0Mjc3fQ.epTmnNY0QIsaOLDbqzPuCncgqvz2UXglyznuvfQ35vs",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"2213123\",\r\n    \"casts\": [\"23423432\"],\r\n    \"genres\": [\"323423\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{domain}}:3500/api/orders",
+							"protocol": "http",
+							"host": [
+								"{{domain}}"
+							],
+							"port": "3500",
+							"path": [
+								"api",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "test",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTYxMzg4OTQ3NywianRpIjoiOTM1MWQ4MDEtNTcyMC00NTM0LThjNDctNjgyNjRlNDc0NmEzIiwibmJmIjoxNjEzODg5NDc3LCJ0eXBlIjoiYWNjZXNzIiwic3ViIjoiNjAzMWZjMTdjZjk0YWQ2ODAzNmU5MTUwIiwiZXhwIjoxNjE0NDk0Mjc3fQ.epTmnNY0QIsaOLDbqzPuCncgqvz2UXglyznuvfQ35vs",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://{{domain}}:3500/api/test",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"port": "3500",
+					"path": [
+						"api",
+						"test"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTYxMzg4OTQ3NywianRpIjoiOTM1MWQ4MDEtNTcyMC00NTM0LThjNDctNjgyNjRlNDc0NmEzIiwibmJmIjoxNjEzODg5NDc3LCJ0eXBlIjoiYWNjZXNzIiwic3ViIjoiNjAzMWZjMTdjZjk0YWQ2ODAzNmU5MTUwIiwiZXhwIjoxNjE0NDk0Mjc3fQ.epTmnNY0QIsaOLDbqzPuCncgqvz2UXglyznuvfQ35vs",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
