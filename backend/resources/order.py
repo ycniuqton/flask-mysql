@@ -1,5 +1,5 @@
 from flask import Response, request
-from database.models import Order, User
+from database.models import Order
 from flask_jwt_extended import jwt_required, get_jwt_identity
 from flask_restful import Resource
 from mongoengine.errors import FieldDoesNotExist, NotUniqueError, DoesNotExist, ValidationError, InvalidQueryError
@@ -17,13 +17,12 @@ def allowed_file(filename):
 
 class OrdersApi(Resource):
     # Get list order. But not yet using now.
-    @jwt_required()
     def get(self):
         query = Order.objects()
         orders = Order.objects().to_json()
         return Response(orders, mimetype="application/json", status=200)
     # Create new order, your csv file will be saved in /public/design/
-    @jwt_required()
+
     def post(self):
         body = request.get_json()
         order = Order(**body)
@@ -35,7 +34,6 @@ class OrdersApi(Resource):
 
 # edit and delete order database, but not yet apply.
 class OrderApi(Resource):
-    @jwt_required
     def put(self, id):
         try:
             user_id = get_jwt_identity()
@@ -48,7 +46,7 @@ class OrderApi(Resource):
         except Exception:
             raise InternalServerError
 
-    @jwt_required
+
     def delete(self, id):
         try:
             user_id = get_jwt_identity()
