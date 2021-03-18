@@ -6,7 +6,6 @@ from mongoengine.errors import FieldDoesNotExist, NotUniqueError, DoesNotExist, 
 from resources.errors import SchemaValidationError,  InternalServerError
 from werkzeug.utils import secure_filename
 import os
-from services.mail_service import send_email
 from flask import current_app
 
 # only accept those file type.
@@ -26,22 +25,12 @@ class OrdersApi(Resource):
     # Create new order, your csv file will be saved in /public/design/
     @jwt_required()
     def post(self):
-        # save file
-        file = request.files['file']
-        if file and allowed_file(file.filename):
-            filename = secure_filename(file.filename)
-            file.save(f'./public/design/{filename}')
-        #send mail
-        user_id = get_jwt_identity()
-        user = User.objects.get(id=user_id)
+        body = request.get_json()
+        order = Order(**body)
+        order.save()
+        id = order.id
+        return {'success': True, 'data': {'id': str(id)}}
 
-        send_email('[Zulemaz] Creating order successfully ',
-                   sender='support@zulemaz.com',
-                   recipients=[user['email']],
-                   text_body='[Zulemaz] New subcription',
-                   html_body=f'<h1>Creating order successfully</h1>')
-
-        return {'success':True,'data':{}}
 
 
 # edit and delete order database, but not yet apply.

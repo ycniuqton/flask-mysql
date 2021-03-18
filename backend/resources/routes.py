@@ -2,7 +2,7 @@ from .auth import SignupApi, LoginApi
 from .users import UserApi
 from .order import OrdersApi, OrderApi
 from .reset_password import ForgotPassword, ResetPassword
-from .contact import  Contact
+
 
 def initialize_routes(api):
     api.add_resource(SignupApi, '/api/auth/signup')
@@ -16,6 +16,6 @@ def initialize_routes(api):
     api.add_resource(OrdersApi, '/api/orders')
     api.add_resource(OrderApi, '/api/orders/<id>')
 
-    api.add_resource(Contact, '/api/contact')
+
 
 
