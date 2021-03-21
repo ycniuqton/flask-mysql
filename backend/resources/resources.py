@@ -45,3 +45,4 @@ class BSTimelineAPI(Resource):
             return Response(item, mimetype="application/json", status=200)
         except Exception:
             return '', 200
+

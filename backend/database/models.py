@@ -1,5 +1,6 @@
 from .db import db
 from mongoengine import *
+from marshmallow import Schema, fields, post_load, ValidationError
 
 class Order(db.Document):
     name = StringField(required=True, unique=True)
@@ -13,6 +14,8 @@ class BSTimeline(db.Document):
     sell = IntField(required=True)
     current = IntField(required=True)
     average = IntField(required=True)
+    sell_20 = FloatField(required=True)
+    buy_20 = FloatField(required=True)
     time_stamp = IntField(required=True)
 
 class BSHistory(db.Document):
