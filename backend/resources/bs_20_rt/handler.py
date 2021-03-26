@@ -7,7 +7,8 @@ import json
 import os
 from flask import current_app
 import time
-r = redis.Redis('192.168.150.146', db=0)
+from envi import *
+r = redis.Redis(REDIS, db=0)
 
 
 static_data = {

@@ -9,7 +9,7 @@ class BS20_QT(Schema):
         if data['symbol']:
             data['symbol'] = data['symbol'].split(',')
         data['key'] = 'BS_20'
-        if data['watch_mode']:
+        if 'watch_mode' in data and data['watch_mode']:
             if data['watch_mode'] == '3 days':
                 data['key'] = "BS_20_3D"
         return data

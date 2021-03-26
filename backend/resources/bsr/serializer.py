@@ -8,8 +8,8 @@ class BSR_QT(Schema):
     def loader(self, data, **kwargs):
         if data['symbol']:
             data['symbol'] = data['symbol'].split(',')
-        data['key'] = 'BSR'
-        if data['watch_mode']:
+        data['key'] = 'BSR_D0'
+        if 'watch_mode' in data and data['watch_mode']:
             if data['watch_mode'] == '3 days':
                 data['key'] = "BSR_3D"
         return data
