@@ -9,31 +9,37 @@ from utils.response import success, clear_sa_ss, error
 
 class OrdersApi(Resource):
     def get(self):
-        session = ConnectDB()()
-        parameters = request.args
-        limit, page, offset, order_by = getDefault(
-            parameters, Order
-        )
+        try:
+            session = ConnectDB()()
+            parameters = request.args
+            limit, page, offset, order_by = getDefault(
+                parameters, Order
+            )
 
-        if 'search' in parameters and parameters['search'] != '':
-            query = session.query(Order).filter(
-                or_(key.like(('%' + parameters['search'] + '%'))
-                    for key in Order.__table__.columns)
-            ).order_by(order_by).offset(offset).limit(limit)
-        else:
-            query = session.query(Order).\
-                order_by(order_by).offset(offset).limit(limit)
-        total_count = query.count()
-        orders = query.all()
-        return success('', get_data_with_page(clear_sa_ss(orders), limit, page, total_count))
+            if 'search' in parameters and parameters['search'] != '':
+                query = session.query(Order).filter(
+                    or_(key.like(('%' + parameters['search'] + '%'))
+                        for key in Order.__table__.columns)
+                ).order_by(order_by).offset(offset).limit(limit)
+            else:
+                query = session.query(Order).\
+                    order_by(order_by).offset(offset).limit(limit)
+            total_count = query.count()
+            orders = query.all()
+            return success('', get_data_with_page(clear_sa_ss(orders), limit, page, total_count))
+        except:
+            return error("", "")
 
     def post(self):
-        session = ConnectDB()()
-        data = request.get_json()
-        order = Order(**data)
-        session.add(order)
-        session.commit()
-        return success("", clear_sa_ss(order))
+        try:
+            session = ConnectDB()()
+            data = request.get_json()
+            order = Order(**data)
+            session.add(order)
+            session.commit()
+            return success("", clear_sa_ss(order))
+        except:
+            return error("", "")
 
 
 class OrderApi(Resource):
@@ -57,6 +63,9 @@ class OrderApi(Resource):
             return error("", "")
 
     def get(self, id):
-        session = ConnectDB()()
-        order = session.query(Order).filter_by(id=id).one()
-        return success("", clear_sa_ss(order))
+        try:
+            session = ConnectDB()()
+            order = session.query(Order).filter_by(id=id).one()
+            return success("", clear_sa_ss(order))
+        except:
+            return error("", "")
