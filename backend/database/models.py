@@ -13,4 +13,3 @@ class Order(Base):
     name = Column(String)
     casts = Column(String)
     genres = Column(String)
-

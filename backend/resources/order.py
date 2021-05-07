@@ -1,7 +1,6 @@
 from flask import Response, request
 from database.models import Order
 from database.db import ConnectDB
-from flask_jwt_extended import jwt_required, get_jwt_identity
 from flask_restful import Resource
 from utils.paging import getDefault, get_data_with_page
 from sqlalchemy import or_
@@ -47,7 +46,6 @@ class OrderApi(Resource):
             return success("", order)
         except :
             return error("", "")
-
 
     def delete(self, id):
         try:
