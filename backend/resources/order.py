@@ -1,64 +1,64 @@
 from flask import Response, request
 from database.models import Order
+from database.db import ConnectDB
 from flask_jwt_extended import jwt_required, get_jwt_identity
 from flask_restful import Resource
-from mongoengine.errors import FieldDoesNotExist, NotUniqueError, DoesNotExist, ValidationError, InvalidQueryError
-from resources.errors import SchemaValidationError,  InternalServerError
-from werkzeug.utils import secure_filename
-import os
-from flask import current_app
-
-# only accept those file type.
-ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
-def allowed_file(filename):
-    return '.' in filename and \
-        filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+from utils.paging import getDefault, get_data_with_page
+from sqlalchemy import or_
+from utils.response import success, clear_sa_ss, error
 
 
 class OrdersApi(Resource):
-    # Get list order. But not yet using now.
     def get(self):
-        query = Order.objects()
-        orders = Order.objects().to_json()
-        return Response(orders, mimetype="application/json", status=200)
-    # Create new order, your csv file will be saved in /public/design/
+        session = ConnectDB()()
+        parameters = request.args
+        limit, page, offset, order_by = getDefault(
+            parameters, Order
+        )
+
+        if 'search' in parameters and parameters['search'] != '':
+            query = session.query(Order).filter(
+                or_(key.like(('%' + parameters['search'] + '%'))
+                    for key in Order.__table__.columns)
+            ).order_by(order_by).offset(offset).limit(limit)
+        else:
+            query = session.query(Order).\
+                order_by(order_by).offset(offset).limit(limit)
+        total_count = query.count()
+        orders = query.all()
+        return success('', get_data_with_page(clear_sa_ss(orders), limit, page, total_count))
 
     def post(self):
-        body = request.get_json()
-        order = Order(**body)
-        order.save()
-        id = order.id
-        return {'success': True, 'data': {'id': str(id)}}
+        session = ConnectDB()()
+        data = request.get_json()
+        order = Order(**data)
+        session.add(order)
+        session.commit()
+        return success("", clear_sa_ss(order))
 
 
-
-# edit and delete order database, but not yet apply.
 class OrderApi(Resource):
     def put(self, id):
         try:
-            user_id = get_jwt_identity()
-            order = Order.objects.get(id=id, added_by=user_id)
-            body = request.get_json()
-            Order.objects.get(id=id).update(**body)
-            return '', 200
-        except InvalidQueryError:
-            raise SchemaValidationError
-        except Exception:
-            raise InternalServerError
+            data = request.get_json()
+            session = ConnectDB()()
+            order = session.query(Order).filter(Order.id == id).update(data)
+            session.commit()
+            return success("", order)
+        except :
+            return error("", "")
 
 
     def delete(self, id):
         try:
-            user_id = get_jwt_identity()
-            order = Order.objects.get(id=id, added_by=user_id)
-            order.delete()
-            return '', 200
+            session = ConnectDB()()
+            session.query(Order).filter(Order.id == id).delete()
+            session.commit()
+            return success("", "")
         except Exception:
-            raise InternalServerError
+            return error("", "")
 
     def get(self, id):
-        try:
-            orders = Order.objects.get(id=id).to_json()
-            return Response(orders, mimetype="application/json", status=200)
-        except Exception:
-            raise InternalServerError
+        session = ConnectDB()()
+        order = session.query(Order).filter_by(id=id).one()
+        return success("", clear_sa_ss(order))

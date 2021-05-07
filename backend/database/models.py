@@ -1,29 +1,16 @@
-from .db import db
-from mongoengine import *
-from marshmallow import Schema, fields, post_load, ValidationError
+from sqlalchemy.ext.declarative import declarative_base
 
-class Order(db.Document):
-    name = StringField(required=True, unique=True)
-    casts = ListField(db.StringField(), required=True)
-    genres = ListField(db.StringField(), required=True)
+from sqlalchemy.orm import *
 
-class BSTimeline(db.Document):
-    date = DateTimeField(required=True)
-    symbol = StringField(required=True)
-    buy = IntField(required=True)
-    sell = IntField(required=True)
-    current = IntField(required=True)
-    average = IntField(required=True)
-    sell_20 = FloatField(required=True)
-    buy_20 = FloatField(required=True)
-    time_stamp = IntField(required=True)
+from sqlalchemy import *
 
-class BSHistory(db.Document):
-    date = DateTimeField(required=True)
-    symbol = StringField(required=True)
-    volumn = IntField(required=True)
-    price = IntField(required=True)
-    time_stamp = IntField(required=True)
+Base = declarative_base()
 
 
+class Order(Base):
+    __tablename__ = 'order'
+    id = Column(Integer, primary_key=True)
+    name = Column(String)
+    casts = Column(String)
+    genres = Column(String)
 
