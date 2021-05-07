@@ -1,146 +1,191 @@
 {
-	"info": {
-		"_postman_id": "60fab1cc-61d1-4245-8569-c63347f3564a",
-		"name": "CK APP",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
-	},
-	"item": [
+	"id": "b058f5c6-a60f-d1e3-8ac1-3e9709321ca1",
+	"name": "Flask-mysql",
+	"description": "",
+	"order": [],
+	"folders": [
 		{
-			"name": "BSTimeline",
-			"item": [
+			"name": "Order",
+			"description": "",
+			"collectionId": "b058f5c6-a60f-d1e3-8ac1-3e9709321ca1",
+			"order": [
+				"2abea085-cd26-cefe-d0da-52640af685cb",
+				"80ab3812-ce21-5f10-e4db-76b386f652ab",
+				"84eb0a44-c6e1-a76b-aa0e-657049217b3d",
+				"9460ccb4-ef01-6d49-35d0-a39ffc547437",
+				"62f5840e-8df8-f6a0-0252-f5d663352688"
+			],
+			"owner": 0,
+			"folders_order": [],
+			"id": "566c4048-4356-be25-9191-72b3cbc9ea3a"
+		}
+	],
+	"folders_order": [
+		"566c4048-4356-be25-9191-72b3cbc9ea3a"
+	],
+	"timestamp": 1620275578690,
+	"owner": 0,
+	"public": false,
+	"requests": [
+		{
+			"id": "2abea085-cd26-cefe-d0da-52640af685cb",
+			"headers": "",
+			"headerData": [],
+			"url": "{{flask_mysql}}/api/orders?orderBy=name&orderType=desc",
+			"queryParams": [
 				{
-					"name": "Create ",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"date\":\"2019-01-31\",\r\n    \"symbol\":\"VHM\",\r\n    \"buy\": 123,\r\n    \"sell\": 222,\r\n    \"current\": 21,\r\n    \"average\": 212,\r\n    \"sell_20\": 21.2,\r\n    \"buy_20\":31.2,\r\n    \"time_stamp\": 123231232\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://{{domain}}:3500/api/bstimeline",
-							"protocol": "http",
-							"host": [
-								"{{domain}}"
-							],
-							"port": "3500",
-							"path": [
-								"api",
-								"bstimeline"
-							]
-						}
-					},
-					"response": []
+					"key": "orderBy",
+					"value": "name",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "orderType",
+					"value": "desc",
+					"equals": true,
+					"description": "",
+					"enabled": true
 				}
-			]
+			],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1620357792467,
+			"name": "GET All",
+			"description": "",
+			"collectionId": "b058f5c6-a60f-d1e3-8ac1-3e9709321ca1",
+			"responses": []
 		},
 		{
-			"name": "BS20",
-			"item": [
+			"id": "62f5840e-8df8-f6a0-0252-f5d663352688",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
 				{
-					"name": "Get",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "https://{{domain}}:3500/api/bs20?symbol=VHM,VIC,VRE&watch_mode=3 days",
-							"protocol": "https",
-							"host": [
-								"{{domain}}"
-							],
-							"port": "3500",
-							"path": [
-								"api",
-								"bs20"
-							],
-							"query": [
-								{
-									"key": "symbol",
-									"value": "VHM,VIC,VRE"
-								},
-								{
-									"key": "watch_mode",
-									"value": "3 days"
-								}
-							]
-						}
-					},
-					"response": []
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
 				}
-			]
+			],
+			"url": "{{flask_mysql}}/api/orders/3",
+			"folder": "566c4048-4356-be25-9191-72b3cbc9ea3a",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "DELETE",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1620297179100,
+			"name": "Delete",
+			"description": "",
+			"collectionId": "b058f5c6-a60f-d1e3-8ac1-3e9709321ca1",
+			"responses": [],
+			"rawModeData": "{\n\t\"name\": \"ten moi\",\n\t\"casts\": \"casts\",\n\t\"genres\": \"genres\"\n}"
 		},
 		{
-			"name": "BSR",
-			"item": [
+			"id": "80ab3812-ce21-5f10-e4db-76b386f652ab",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
 				{
-					"name": "Get",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "https://{{domain}}:3500/api/bsr?symbol=VHM,VIC,VRE&watch_mode=3 days",
-							"protocol": "https",
-							"host": [
-								"{{domain}}"
-							],
-							"port": "3500",
-							"path": [
-								"api",
-								"bsr"
-							],
-							"query": [
-								{
-									"key": "symbol",
-									"value": "VHM,VIC,VRE"
-								},
-								{
-									"key": "watch_mode",
-									"value": "3 days"
-								}
-							]
-						}
-					},
-					"response": []
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
 				}
-			]
+			],
+			"url": "{{flask_mysql}}/api/orders",
+			"folder": "566c4048-4356-be25-9191-72b3cbc9ea3a",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1620356664055,
+			"name": "Create",
+			"description": "",
+			"collectionId": "b058f5c6-a60f-d1e3-8ac1-3e9709321ca1",
+			"responses": [],
+			"rawModeData": "{\n\t\"name\": \"another name\",\n\t\"casts\": \"some casts\",\n\t\"genres\": \"dummy genres\"\n}"
 		},
 		{
-			"name": "test",
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTYxMzg4OTQ3NywianRpIjoiOTM1MWQ4MDEtNTcyMC00NTM0LThjNDctNjgyNjRlNDc0NmEzIiwibmJmIjoxNjEzODg5NDc3LCJ0eXBlIjoiYWNjZXNzIiwic3ViIjoiNjAzMWZjMTdjZjk0YWQ2ODAzNmU5MTUwIiwiZXhwIjoxNjE0NDk0Mjc3fQ.epTmnNY0QIsaOLDbqzPuCncgqvz2UXglyznuvfQ35vs",
-						"type": "text"
-					}
-				],
-				"url": {
-					"raw": "http://{{domain}}:3500/api/test",
-					"protocol": "http",
-					"host": [
-						"{{domain}}"
-					],
-					"port": "3500",
-					"path": [
-						"api",
-						"test"
-					],
-					"query": [
-						{
-							"key": "",
-							"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTYxMzg4OTQ3NywianRpIjoiOTM1MWQ4MDEtNTcyMC00NTM0LThjNDctNjgyNjRlNDc0NmEzIiwibmJmIjoxNjEzODg5NDc3LCJ0eXBlIjoiYWNjZXNzIiwic3ViIjoiNjAzMWZjMTdjZjk0YWQ2ODAzNmU5MTUwIiwiZXhwIjoxNjE0NDk0Mjc3fQ.epTmnNY0QIsaOLDbqzPuCncgqvz2UXglyznuvfQ35vs",
-							"disabled": true
-						}
-					]
+			"id": "84eb0a44-c6e1-a76b-aa0e-657049217b3d",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
 				}
-			},
-			"response": []
+			],
+			"url": "{{flask_mysql}}/api/orders/1",
+			"folder": "566c4048-4356-be25-9191-72b3cbc9ea3a",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "PUT",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1620297073884,
+			"name": "Update",
+			"description": "",
+			"collectionId": "b058f5c6-a60f-d1e3-8ac1-3e9709321ca1",
+			"responses": [],
+			"rawModeData": "{\n\t\"name\": \"ten moi\",\n\t\"casts\": \"casts\",\n\t\"genres\": \"genres\"\n}"
+		},
+		{
+			"id": "9460ccb4-ef01-6d49-35d0-a39ffc547437",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{flask_mysql}}/api/orders/2",
+			"folder": "566c4048-4356-be25-9191-72b3cbc9ea3a",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1620297146828,
+			"name": "GET One",
+			"description": "",
+			"collectionId": "b058f5c6-a60f-d1e3-8ac1-3e9709321ca1",
+			"responses": [],
+			"rawModeData": "{\n\t\"name\": \"ten moi\",\n\t\"casts\": \"casts\",\n\t\"genres\": \"genres\"\n}"
 		}
 	]
 }
