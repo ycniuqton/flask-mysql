@@ -5,6 +5,17 @@
 	"order": [],
 	"folders": [
 		{
+			"name": "Auth",
+			"description": "",
+			"collectionId": "b058f5c6-a60f-d1e3-8ac1-3e9709321ca1",
+			"order": [
+				"958fdf28-8a96-cff1-a53d-30ddb0929f49"
+			],
+			"owner": 0,
+			"folders_order": [],
+			"id": "f0270d4e-0bcc-00f7-40fe-7fd1c9b7c1ee"
+		},
+		{
 			"name": "Order",
 			"description": "",
 			"collectionId": "b058f5c6-a60f-d1e3-8ac1-3e9709321ca1",
@@ -21,7 +32,8 @@
 		}
 	],
 	"folders_order": [
-		"566c4048-4356-be25-9191-72b3cbc9ea3a"
+		"566c4048-4356-be25-9191-72b3cbc9ea3a",
+		"f0270d4e-0bcc-00f7-40fe-7fd1c9b7c1ee"
 	],
 	"timestamp": 1620275578690,
 	"owner": 0,
@@ -29,23 +41,30 @@
 	"requests": [
 		{
 			"id": "2abea085-cd26-cefe-d0da-52640af685cb",
-			"headers": "",
-			"headerData": [],
-			"url": "{{flask_mysql}}/api/orders?orderBy=name&orderType=desc",
+			"headers": "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTYyMDM3NjA2MSwianRpIjoiMDg0ZGJhZDItYzkzOS00ZmRmLWFhZDktNzlkMzVlOGZlZDM3IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6InRlc3QiLCJuYmYiOjE2MjAzNzYwNjEsImV4cCI6MTYyMDM3Njk2MX0.5lBbHMFOHSshtnJcRhEtuFay3o_2AEx0foUxDiS-9m8\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTYyMDM3NjA2MSwianRpIjoiMDg0ZGJhZDItYzkzOS00ZmRmLWFhZDktNzlkMzVlOGZlZDM3IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6InRlc3QiLCJuYmYiOjE2MjAzNzYwNjEsImV4cCI6MTYyMDM3Njk2MX0.5lBbHMFOHSshtnJcRhEtuFay3o_2AEx0foUxDiS-9m8",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{flask_mysql}}/api/orders",
 			"queryParams": [
 				{
 					"key": "orderBy",
-					"value": "name",
+					"value": "casts",
 					"equals": true,
 					"description": "",
-					"enabled": true
+					"enabled": false
 				},
 				{
 					"key": "orderType",
 					"value": "desc",
 					"equals": true,
 					"description": "",
-					"enabled": true
+					"enabled": false
 				}
 			],
 			"preRequestScript": null,
@@ -57,7 +76,7 @@
 			"tests": null,
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1620357792467,
+			"time": 1620376083993,
 			"name": "GET All",
 			"description": "",
 			"collectionId": "b058f5c6-a60f-d1e3-8ac1-3e9709321ca1",
@@ -118,12 +137,12 @@
 			"tests": null,
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1620356664055,
+			"time": 1620373991283,
 			"name": "Create",
 			"description": "",
 			"collectionId": "b058f5c6-a60f-d1e3-8ac1-3e9709321ca1",
 			"responses": [],
-			"rawModeData": "{\n\t\"name\": \"another name\",\n\t\"casts\": \"some casts\",\n\t\"genres\": \"dummy genres\"\n}"
+			"rawModeData": "{\n\t\"name\": \"dfcdf332f\",\n\t\"casts\": \"xxx\",\n\t\"genres\": \"yyyyy\"\n}"
 		},
 		{
 			"id": "84eb0a44-c6e1-a76b-aa0e-657049217b3d",
@@ -149,12 +168,12 @@
 			"tests": null,
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1620297073884,
+			"time": 1620373767251,
 			"name": "Update",
 			"description": "",
 			"collectionId": "b058f5c6-a60f-d1e3-8ac1-3e9709321ca1",
 			"responses": [],
-			"rawModeData": "{\n\t\"name\": \"ten moi\",\n\t\"casts\": \"casts\",\n\t\"genres\": \"genres\"\n}"
+			"rawModeData": "{\n\t\"name\": \"ewe3d moi\",\n\t\"casts\": \"casts\",\n\t\"genres\": \"genres\"\n}"
 		},
 		{
 			"id": "9460ccb4-ef01-6d49-35d0-a39ffc547437",
@@ -167,7 +186,7 @@
 					"enabled": true
 				}
 			],
-			"url": "{{flask_mysql}}/api/orders/2",
+			"url": "{{flask_mysql}}/api/orders/10",
 			"folder": "566c4048-4356-be25-9191-72b3cbc9ea3a",
 			"queryParams": [],
 			"preRequestScript": null,
@@ -180,12 +199,44 @@
 			"tests": null,
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1620297146828,
+			"time": 1620373983007,
 			"name": "GET One",
 			"description": "",
 			"collectionId": "b058f5c6-a60f-d1e3-8ac1-3e9709321ca1",
 			"responses": [],
 			"rawModeData": "{\n\t\"name\": \"ten moi\",\n\t\"casts\": \"casts\",\n\t\"genres\": \"genres\"\n}"
+		},
+		{
+			"id": "958fdf28-8a96-cff1-a53d-30ddb0929f49",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{flask_mysql}}/api/login",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "b058f5c6-a60f-d1e3-8ac1-3e9709321ca1",
+			"data": [],
+			"dataMode": "raw",
+			"name": "Login",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1620376110418,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"folder": "f0270d4e-0bcc-00f7-40fe-7fd1c9b7c1ee",
+			"rawModeData": "{\n\t\"username\": \"test\",\n\t\"password\": \"test\"\n}"
 		}
 	]
 }

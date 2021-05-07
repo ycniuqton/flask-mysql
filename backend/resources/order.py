@@ -5,9 +5,10 @@ from flask_restful import Resource
 from utils.paging import getDefault, get_data_with_page
 from sqlalchemy import or_
 from utils.response import success, clear_sa_ss, error
-
+from flask_jwt_extended import jwt_required
 
 class OrdersApi(Resource):
+    @jwt_required()
     def get(self):
         session = ConnectDB()()
         parameters = request.args
@@ -27,6 +28,7 @@ class OrdersApi(Resource):
         orders = query.all()
         return success('', get_data_with_page(clear_sa_ss(orders), limit, page, total_count))
 
+    @jwt_required()
     def post(self):
         session = ConnectDB()()
         data = request.get_json()
@@ -37,6 +39,7 @@ class OrdersApi(Resource):
 
 
 class OrderApi(Resource):
+    @jwt_required()
     def put(self, id):
         try:
             data = request.get_json()
@@ -47,6 +50,7 @@ class OrderApi(Resource):
         except :
             return error("", "")
 
+    @jwt_required()
     def delete(self, id):
         try:
             session = ConnectDB()()
@@ -56,6 +60,7 @@ class OrderApi(Resource):
         except Exception:
             return error("", "")
 
+    @jwt_required()
     def get(self, id):
         session = ConnectDB()()
         order = session.query(Order).filter_by(id=id).one()
