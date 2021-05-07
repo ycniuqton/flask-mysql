@@ -16,5 +16,5 @@ bcrypt = Bcrypt(app)
 CORS(app)
 
 initialize_db(app)
-initialize_routes(api)
+initialize_routes(app)
 
