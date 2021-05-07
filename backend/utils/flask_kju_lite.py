@@ -3,12 +3,13 @@ from database.db import ConnectDB
 from utils.paging import getDefault, get_data_with_page
 from sqlalchemy import or_
 from utils.response import success, clear_sa_ss, error
-
+from flask_jwt_extended import jwt_required
 
 def gen_api_lite(app, ThisModel, url, urls=False):
     if not urls:
         urls = url+"/<int:id>"
     @app.route(url, methods=['GET', 'POST'])
+    @jwt_required()
     def resources():
         if request.method == 'GET':
             try:
@@ -43,6 +44,7 @@ def gen_api_lite(app, ThisModel, url, urls=False):
                 return error("", "")
 
     @app.route(urls, methods=['GET', 'DELETE', 'PUT'])
+    @jwt_required()
     def resource(id):
         if request.method == 'GET':
             try:
