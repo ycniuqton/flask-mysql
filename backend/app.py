@@ -15,6 +15,6 @@ api = Api(app, errors=errors)
 bcrypt = Bcrypt(app)
 CORS(app)
 
-initialize_db(new=True)
-initialize_routes(api)
+initialize_db(new=False)
+initialize_routes(api, app)
 
