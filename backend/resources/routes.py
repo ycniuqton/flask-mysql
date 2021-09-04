@@ -26,4 +26,14 @@ def init_auth(app):
         access_token = create_access_token(identity=username)
         return success("", {"access_token": access_token})
 
+    @app.route("/api/signup", methods=["POST"])
+    def signup():
+        username = request.json.get("username", None)
+        password = request.json.get("password", None)
+        if username != "test" or password != "test":
+            return error("Bad username or password", "")
+
+        access_token = create_access_token(identity=username)
+        return success("", {"access_token": access_token})
+
 
